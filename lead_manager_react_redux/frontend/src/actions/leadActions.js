@@ -1,10 +1,12 @@
 import { GET_LEADS, DELETE_LEAD, ADD_LEAD } from './types';
 import axios from 'axios';
 
+const REACT_BACKEND_URL = 'http://localhost:5000/questions';
+
 // GET LEADS
 export const getLeads = () => async dispatch => {
   try {
-    const { data } = await axios.get('http://localhost:5000/questions');
+    const { data } = await axios.get(REACT_BACKEND_URL);
     
     dispatch({
       type: GET_LEADS,
@@ -18,7 +20,7 @@ export const getLeads = () => async dispatch => {
 // DELETE LEAD
 export const deleteLead = (id) => async dispatch => {
   try {
-    await axios.delete(`http://localhost:5000/questions/${id}`)
+    await axios.delete(`${REACT_BACKEND_URL}/${id}`)
     
     dispatch({
       type: DELETE_LEAD,
@@ -32,7 +34,7 @@ export const deleteLead = (id) => async dispatch => {
 // ADD LEAD
 export const addLead = (lead) => async dispatch => {
   try {
-    const response = await axios.post('http://localhost:5000/questions', lead);
+    const response = await axios.post(REACT_BACKEND_URL, lead);
     
     dispatch({
       type: ADD_LEAD,
