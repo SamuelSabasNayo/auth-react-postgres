@@ -10,10 +10,10 @@ class Header extends Component {
           fontWeight: 'bold',
           textAlign: 'center',
           margin: '20px 0',
-          borderBottom: '2px #ccc dashed'
+          borderBottom: '2px #ccc solid'
         }}
         >
-          Lead Manager
+        <h1>Lead Manager</h1>
         </nav>
       </div>
     )

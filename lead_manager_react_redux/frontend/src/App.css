@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -35,4 +35,69 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+table {
+  margin: auto;
+  width: 80%;
+  border: 2px solid #000;
+}
+.th, .td {
+  padding: 1%;
+}
+
+tbody tr:nth-child(odd) {
+  background: rgb(233, 242, 245);
+}
+
+tbody tr:nth-child(even) {
+  background: rgb(217, 226, 230);
+}
+
+.updateBtn {
+  background: rgb(90, 160, 252);
+  font-size: 20px;
+  margin: 5px 5px 0 5px;
+  border: none;
+}
+
+.deleteBtn {
+  background: rgb(252, 90, 90);
+  font-size: 20px;
+  margin: 5px 5px 0 5px;
+  border: none;
+}
+
+.card {
+  width: 500px;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+.sumitBtn {
+  background: rgb(90, 160, 252);
+  font-size: 20px;
+  /* margin: 5px 5px 0 5px; */
+  border: none;
+  width: 100%;
+  padding: 15px;
+}
+
+.form-group {
+  margin: auto;
+  width: 400px;
+  min-width: 200px;
+  /* background: orange; */
+  display: block;
+}
+
+label {
+  /* margin: 20px 0; */
+  font-size: 20px;
+  font-weight: bold;
+}
+input {
+  padding: 10px;
+  width: 94%;
+  margin-bottom: 10px;
 }

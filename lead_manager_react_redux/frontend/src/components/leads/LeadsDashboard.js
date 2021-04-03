@@ -1,6 +1,6 @@
 import React from 'react';
 import LeadsForm from './LeadsForm';
-import LeadsList from './LeadsList';
+import LeadsList from './LeadList';
 
 const LeadsDashboard = () => {
   return (
