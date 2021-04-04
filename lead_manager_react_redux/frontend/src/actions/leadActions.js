@@ -1,4 +1,5 @@
-import { GET_LEADS, DELETE_LEAD, ADD_LEAD } from './types';
+import { GET_LEADS, DELETE_LEAD, ADD_LEAD, GET_ERRORS } from './types';
+import { createMessage } from './messages';
 import axios from 'axios';
 
 const REACT_BACKEND_URL = 'http://localhost:5000/questions';
@@ -13,7 +14,7 @@ export const getLeads = () => async dispatch => {
       payload: data
     });
   } catch (error) {
-    console.log(error);
+    console.log(error.response.data);
   }
 };
 
@@ -21,6 +22,8 @@ export const getLeads = () => async dispatch => {
 export const deleteLead = (id) => async dispatch => {
   try {
     await axios.delete(`${REACT_BACKEND_URL}/${id}`)
+    
+    dispatch(createMessage({ leadDeleted: 'Lead Deleted' }));
     
     dispatch({
       type: DELETE_LEAD,
@@ -41,6 +44,14 @@ export const addLead = (lead) => async dispatch => {
       payload: response.data
     });
   } catch (error) {
-    console.log(error);
+    const errors = {
+      msg: error.response.data,
+      status: error.response.status
+    }
+    
+    dispatch({
+      type: GET_ERRORS,
+      payload: errors
+    })
   }
 };
